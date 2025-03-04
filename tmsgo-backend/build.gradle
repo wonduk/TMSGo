@@ -31,9 +31,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc' // JDBC 지원
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2' // MyBatis 추가
-	
+ 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'// mariadb
+    compileOnly 'org.projectlombok:lombok'// Lombok (컴파일 타임에만 필요)
+    annotationProcessor 'org.projectlombok:lombok'// Lombok (컴파일 타임에만 필요)
+    implementation 'org.apache.logging.log4j:log4j-core' // MyBatis용 log 설정 (선택 사항, SQL 로그를 보기 위함)
 }
 
 tasks.named('test') {
