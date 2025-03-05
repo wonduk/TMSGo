@@ -1,0 +1,94 @@
+/* 전체 레이아웃 */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 좌측 사이드바 */
+.sidebar {
+    width: 250px;
+    background-color: #222;
+    color: white;
+    height: calc(100vh - 60px); /* 네비바 제외 높이 */
+    padding: 20px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+}
+
+/* 본문 영역 */
+.content {
+    margin-left: 250px;
+    margin-top: 60px;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* 사이드바 스타일 */
+.nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+}
+
+/* 메뉴 스타일 */
+.menu-item {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+.menu-item:hover {
+    background-color: #444;
+}
+
+/* 서브 메뉴 스타일 */
+.submenu {
+    padding-left: 20px;
+    background-color: #333;
+}
+
+.submenu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.submenu-item:hover {
+    background-color: #555;
+}
+
+/* 드롭다운 버튼 */
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 푸터 스타일 */
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
