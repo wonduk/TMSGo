@@ -29,13 +29,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed ,onMounted } from "vue";
+import { ref, computed } from "vue";
 import { useAuthStore } from "../stores/authStore"; // Pinia 스토어 import
-import { cmmAxios } from "../common/ts/cmmAxios";
 
-const { sendRequest, isLoading } = cmmAxios();
 const authStore = useAuthStore();
-const responseData = ref<any>(null);
 
 // 로그인 상태 계산
 const isAuthenticated = computed(() => authStore.isAuthenticated);
@@ -51,23 +48,4 @@ const handleAuth = () => {
     alert("로그인 되었습니다!");
   }
 };
-
-// ✅ API 요청 함수
-const fn_getMenu = async () => {
-  const response = await sendRequest({
-    url: "/api/hello",
-    method: "GET",
-  });
-
-  if (response) {
-    responseData.value = response;
-    console.log("응답 데이터:", response);
-  } else {
-    console.error("데이터 요청 실패");
-  }
-};
-
-onMounted(() => {
-  fn_getMenu();
-});
 </script>
