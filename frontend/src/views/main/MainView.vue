@@ -35,9 +35,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useAuthStore } from "../../stores/authStore"; // Pinia 스토어 import
+import { useRouter } from "vue-router";
+
 
 // Pinia 스토어 가져오기
 const authStore = useAuthStore();
+const router = useRouter();
 
 // 로그인 상태 계산
 const isAuthenticated = computed(() => authStore.isAuthenticated);
@@ -45,6 +48,7 @@ const isAuthenticated = computed(() => authStore.isAuthenticated);
 // 로그인/로그아웃 핸들러
 const handleAuth = () => {
   if (isAuthenticated.value) {
+    router.push("/about");
     authStore.logout();
     alert("로그아웃 되었습니다!");
   } else {

@@ -1,10 +1,12 @@
 package com.example.backend.repository;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.backend.entity.MMMenu;
+import com.example.backend.entity.Driver;
+
 
 @Repository
-public interface MMMenuRepository extends JpaRepository<MMMenu, Integer> {
+public interface DriverRepository extends JpaRepository<Driver, Integer> {
 }
