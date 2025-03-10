@@ -25,6 +25,7 @@
     padding: 20px;
     flex-grow: 1;
     overflow-y: auto;
+    width: 1200px;
 }
 
 /* 사이드바 스타일 */
@@ -92,3 +93,56 @@
     bottom: 0;
     left: 0;
 }
+
+/* ✅ 모달 배경 (어두운 투명 배경) */
+.modal {
+    position: fixed; /* 화면 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 9999; /* 다른 요소보다 앞에 배치 */
+  }
+  
+  /* ✅ 모달 내용 */
+  .modal-content {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  /* ✅ 입력 필드 및 버튼 스타일 */
+  .modal-content input,
+  .modal-content select {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal-content button {
+    padding: 8px 15px;
+    margin: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .modal-content button:first-of-type {
+    background: #28a745; /* 초록색 (저장 버튼) */
+    color: white;
+  }
+  
+  .modal-content button:last-of-type {
+    background: #dc3545; /* 빨간색 (닫기 버튼) */
+    color: white;
+  }
+  
